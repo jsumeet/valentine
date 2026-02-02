@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💌 Valentine's Day Card 💌</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Floating hearts background -->
+    <div class="heart-container" id="heartContainer"></div>
+
+    <!-- Screen 1: Card Delivery for Swati -->
+    <div class="screen active" id="screen1">
+        <div class="card-delivery">
+            <h1>A Special Delivery...</h1>
+            <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExYTQ0M3FpNXNlOXV4ejJ5Zmh1d2Z4N3Fjb3NoNjRjZmtweHVvNGV2NCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/1X9cTljPQOcAnTNiX3/giphy.gif" alt="Love Letter" class="delivery-gif">
+            <p style="font-size: 1.4em;">A Valentine's card is on its way! 💌</p>
+            <button class="continue-btn" onclick="nextScreen(2)">Continue</button>
+        </div>
+    </div>
+
+    <!-- Screen 2: Envelope for Swati -->
+    <div class="screen" id="screen2">
+        <h1>You've Got Mail! 💌</h1>
+        <div class="envelope-container" id="swatiEnvelope" onclick="openEnvelope('swatiEnvelope')">
+            <div class="envelope">
+                <div class="envelope-flap"></div>
+                <div class="card-label">For Swati</div>
+            </div>
+        </div>
+        <p class="click-instruction">👆 Click the envelope to open!</p>
+    </div>
+
+    <!-- Screen 3: Swati's Question -->
+    <div class="screen" id="screen3">
+        <div class="question-content">
+            <h1>Dear <span class="name">Swati</span></h1>
+            <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGw0OWJ4MW85Y3o3ZHJwYW12ZTcxbnkyc2Fxb2N1N3Mya2k1eDV3ayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SYo1DFS8NLhhqzzjMU/giphy.gif" alt="Bear Kiss" class="bear-gif">
+            <div class="message-box">
+                <p>My beautiful wife, my best friend, my everything...</p>
+                <p style="font-size: 1.5em; margin-top: 15px;">Will you be my Valentine? 💕</p>
+            </div>
+            <div class="button-container">
+                <button class="yes-btn" onclick="nextScreen(4)">Yes! 💕</button>
+                <button class="no-btn" id="noBtn1" onclick="moveButton(this)">No</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Screen 4: Swati's Response -->
+    <div class="screen" id="screen4">
+        <div class="response-content">
+            <div class="love-message">I Love You! 💖</div>
+            <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMTVveHJwamtiNWtxM3dkMzJkcmxzMTd0ZmtlMHhoMGRhNnk2MHR0ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/zfMmI84wjY7LGy4S6e/giphy.gif" alt="Kiss" class="response-gif">
+            <div class="message-box">
+                <p style="font-size: 1.3em;">Thank you for saying yes, <span class="name">Swati</span>! ❤️</p>
+                <p>You make every day feel like Valentine's Day!</p>
+                <p>You're my forever love, my partner, my best friend.</p>
+                <p style="margin-top: 15px; font-size: 1.2em;">I love you more than words can say! 💕</p>
+            </div>
+            <button class="continue-btn" onclick="nextScreen(5)">Oh, seems like there's another card incoming..</button>
+        </div>
+    </div>
+
+    <!-- Screen 5: Card Delivery for Veda -->
+    <div class="screen" id="screen5">
+        <div class="card-delivery">
+            <h1>Another Special Delivery...</h1>
+            <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXdkY2hza2pvbXp1cHgyM3h5MGV6Y2xka3g5OXMxaHEyY29pd2x6NiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/aj5pXG4daibV4agNkP/giphy.gif" alt="Love Letter" class="delivery-gif">
+            <p style="font-size: 1.4em;">A card for someone even more special! 💌</p>
+            <button class="continue-btn" onclick="nextScreen(6)">Continue</button>
+        </div>
+    </div>
+
+    <!-- Screen 6: Envelope for Veda -->
+    <div class="screen" id="screen6">
+        <h1>You've Got Mail! 💌</h1>
+        <div class="envelope-container" id="vedaEnvelope" onclick="openEnvelope('vedaEnvelope')">
+            <div class="envelope">
+                <div class="envelope-flap"></div>
+                <div class="card-label">For Veda</div>
+            </div>
+        </div>
+        <p class="click-instruction">👆 Click the envelope to open!</p>
+    </div>
+
+    <!-- Screen 7: Veda's Question -->
+    <div class="screen" id="screen7">
+        <div class="question-content">
+            <h1>My Sweet <span class="name">Veda</span></h1>
+            <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExb3JsY3VudHpucnA2YWY3NGttZXg3eWxnOTluM2h3YTE5ZTFyYmIxeSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/IbT6pG2eMlYeYpJMxc/giphy.gif" alt="Bear Kiss" class="bear-gif">
+            <div class="message-box">
+                <p>My little princess, my sunshine, my joy...</p>
+                <p style="font-size: 1.5em; margin-top: 15px;">Will YOU be my Valentine too? 🦄💝</p>
+            </div>
+            <div class="button-container">
+                <button class="yes-btn" onclick="nextScreen(8)">Yes Papa! 💝</button>
+                <button class="no-btn" id="noBtn2" onclick="moveButton(this)">No</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Screen 8: Veda's Response -->
+    <div class="screen" id="screen8">
+        <div class="response-content">
+            <div class="love-message">I Love You Too! 💖</div>
+            <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMGhmMmViMnFxaXB5Zm80dzk3cmxrNWhuajZpamJwcXI5eGw3cm1ibCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/vBvxC9BFFLPiw/giphy.gif" alt="Polar Bear Hug" class="response-gif">
+            <div class="message-box">
+                <p style="font-size: 1.3em;">Yay! Thank you, <span class="name">Veda</span>! 🌟</p>
+                <p>You're my little star, my sweetest valentine!</p>
+                <p>You bring so much joy and laughter to my life.</p>
+                <p style="margin-top: 15px; font-size: 1.2em;">Daddy loves you so much! 💕</p>
+            </div>
+            <button class="continue-btn" onclick="finalScreen()">See Final Message!</button>
+        </div>
+    </div>
+
+    <!-- Screen 9: Final Message for Both -->
+    <div class="screen" id="screen9">
+        <div class="response-content">
+            <h1><span class="sparkle">✨</span> Best Valentine's Day Ever! <span class="sparkle">✨</span></h1>
+            <div class="final-message">
+                <p style="font-size: 1.8em; margin-bottom: 20px;">💖 To My Two Valentines 💖</p>
+                <p style="font-size: 1.3em;"><span class="name">Swati</span> - You're my forever love, my soulmate 💕</p>
+                <p style="font-size: 1.3em; margin-top: 15px;"><span class="name">Veda</span> - You're my little star, my pride and joy 🌟</p>
+                <p style="font-size: 1.2em; margin-top: 20px; color: #b8577d;">And to <span class="name">Auli</span> 🐕 - You're the best boy!</p>
+                <p style="font-size: 1.5em; margin-top: 25px; color: #c96a8f;">I love you all SO much!</p>
+                <p style="font-size: 1.8em; margin-top: 20px;">Happy Valentine's Day! 💝</p>
+            </div>
+            <div style="font-size: 3em; margin-top: 20px;">💖💕💝💗💓💞🐾</div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
